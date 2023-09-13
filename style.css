@@ -1,16 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Bilbo+Swash+Caps&display=swap');
+
+@font-face {
+  font-family: Morris;
+  src: url(https://cdn.statically.io/gh/EmmesCodes/Tipografias/dae9f5bb/MorrisInitials.ttf);
+  }
+:root {
+  --fontSize: calc((1vw + 1vh) * .95);
+}
 *{
-    font-size:20px;
     margin:0;
     box-sizing: border-box;
     }
 body {
     margin: 0;
     padding: 0;
-    animation: change-background 3s infinite linear;
+    font: var(--fontSize)/200% 'Bilbo Swash Caps', cursive;
+    /* animation: change-background 3s infinite linear; */
+    background-color: #70a2a0;
 }
-/* #wrapper {
-    position: relative;
-} */
 #marco{
     height: 350px;
     margin: 0 auto;
@@ -43,7 +50,7 @@ body {
     position: absolute;
     }
 
-/* Animacion edificios */
+/* Animation edificios */
 
    @keyframes  animar_edificios {
         from { background-position: 0 0; }
@@ -81,6 +88,7 @@ body {
     margin-left: 50%;
     box-shadow: 6em 2em 0 #F7F8E0;
     animation: change-sun ease-in-out 3s infinite;
+    display: block;
     z-index: -30;
 }
 #muro{
@@ -124,51 +132,63 @@ body {
         to { background-position: -8120px 0; }
     }
 /* Candle */
-    .wrapper {
-        position: absolute;
-        right: 10%;
-        top: 30%;
-        transform: scale(1.5, 1.5) translate(-50%, -50%);
+    .wrapper-candle {
+      position: absolute;
+      right: 1em;
+      top: 1em;
       }
-      
       .floor {
         position: absolute;
-        left: 50%;
-        top: 100%;
-        width: 17.5em;
+        top: 5em;
+        left: 5%;
+        width: 18em;
         height: 2em;
         background: #362203;
-        transform: translate(-50%, -50%);
-        z-index: -10;
         border-radius: 1em 0 0 0;
-        box-shadow: -0.5em 1em 0.8em #0c0207
+        box-shadow: -0.5em 1em 0.8em #0c0207;
+        transform: scale(1.5, 1.5);
+      }
+      .perhament {
+        position: absolute;
+        top: 8em;
+        left: 10%;
+        display: flex;
+        filter: url(#wavy2);
+        width: 20em;
+        height: 5em;
+        box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+        background: #fffef0;
+        transform: scale(1.5, 1.5);
       }
       .box {
         position: absolute;
-        left: -20%;
-        top: 110%;
-        background: #fffef0;
-        width: 17em;
-        height: 9em;
-        z-index: -20;
-        filter: url(#wavy2);
-        box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+        top: 9em;
+        left: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        padding: 1em;  
+        width: 20em;
+        height: 5em;
+        text-shadow: 1px 1px 1px #000;
+        color: #7F3300;
+        transform: scale(1.5, 1.5);
       }
-      
+      .box span{
+        font: 1.7em/1em Morris;
+      }
       .candles {
-        position: absolute;
-        left: 50%;
-        top: 50%;
         width: 250px;
         height: 150px;
-        transform: translate(-50%, -100%);
-        z-index: 1;
+        position: absolute;
+        top: -10%;
+        transform: scale(1.5, 1.5);
       }
-      
+                    /*night*/  
       .candle1 {
         position: absolute;
-        left: 50%;
-        top: 50%;
+        left: 40%;
+        top: 40%;
         width: 35px;
         height: 100px;
         background: #fff;
@@ -178,7 +198,7 @@ body {
         transform-origin: center right;
         transform: translate(60%, -25%);
         box-shadow: -2px 0px 0px #95c6f2 inset;
-        animation: expand-body 3s infinite linear;
+        animation: expand-body 3s linear infinite;
       }
       
       .candle1__stick, .candle2__stick {
@@ -195,7 +215,7 @@ body {
       .candle2__stick {
         height: 12px;
         transform-origin: bottom center;
-        animation: stick-animation 3s infinite linear;
+        animation: stick-animation 3s linear infinite;
       }
       
       .candle1__eyes, .candle2__eyes {
@@ -216,7 +236,7 @@ body {
         border-radius: 100%;
         background: #673C63;
         transform: translate(-70%, 0%);
-        animation: blink-eyes 3s infinite linear;
+        animation: blink-eyes 3s linear infinite;
       }
       
       .candle1__eyes-two {
@@ -228,7 +248,7 @@ body {
         border-radius: 100%;
         background: #673C63;
         transform: translate(-70%, 0%);
-        animation: blink-eyes 3s infinite linear;
+        animation: blink-eyes 3s linear infinite;
       }
       
       .candle1__mouth {
@@ -240,66 +260,35 @@ body {
         border-radius: 20px;
         background: #673C63;
         transform: translate(-50%, -50%);
-        animation: uff 3s infinite linear;
+        animation: uff 3s linear infinite;
       }
       
       .candle__smoke-one {
         position: absolute;
         left: 30%;
-        top: 50%;
+        top: 0%;
         width: 30px;
-        height: 3px;
+        height: 0px;
         background: grey;
         transform: translate(-50%, -50%);
-        animation: move-left 3s infinite linear;
+        animation: move-left 3s linear infinite;
       }
       
       .candle__smoke-two {
         position: absolute;
         left: 30%;
-        top: 40%;
-        width: 10px;
+        top: 0%;
+        width: 0px;
         height: 10px;
         border-radius: 10px;
         background: grey;
         transform: translate(-50%, -50%);
-        animation: move-top 3s infinite linear;
-      }
-      
-      .candle2 {
-        position: absolute;
-        left: 20%;
-        top: 65%;
-        width: 42px;
-        height: 60px;
-        background: #fff;
-        border: 3px solid #673C63;
-        border-bottom: 0px;
-        border-radius: 3px;
-        transform: translate(60%, -15%);
-        transform-origin: center right;
-        box-shadow: -2px 0px 0px #95c6f2 inset;
-        animation: shake-left 3s infinite linear;
-      }
-      
-      .candle2__eyes-one {
-        position: absolute;
-        left: 30%;
-        top: 50%;
-        width: 5px;
-        height: 5px;
-        display: inline-block;
-        border: 0px solid #673C63;
-        border-radius: 100%;
-        background: #673C63;
-        transform: translate(-80%, 0%);
-        animation: changeto-lower 3s infinite linear;
-      }
-      
+        animation: move-top 3s linear infinite;
+      }    
       .candle2__eyes-two {
         position: absolute;
         left: 70%;
-        top: 50%;
+        top: 40%;
         width: 5px;
         height: 5px;
         display: inline-block;
@@ -319,24 +308,53 @@ body {
         border-radius: 100%;
         z-index: 0;
         transform: translate(-25%, -50%) scale(2.5, 2.5);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        animation: expand-light 3s infinite linear;
+        border: 2px solid rgba(255, 255, 255, 0);
+        animation: expand-light 3s linear infinite;
       }
       
       .candle2__fire {
         position: absolute;
-        top: 50%;
-        left: 38%;
+        top: 40%;
+        left: 28%;
         display: block;
         width: 16px;
         height: 20px;
-        background-color: red;
         border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-        background: #FF9800;
         transform: translate(-50%, -50%);
-        animation: dance-fire 3s infinite linear;
+        animation: dance-fire 3s linear infinite;
+      }
+      /* day */
+            
+      .candle2 {
+        position: absolute;
+        /* left: 5%; */
+        top: 55%;
+        width: 42px;
+        height: 60px;
+        background: #fff;
+        border: 3px solid #673C63;
+        border-bottom: 0px;
+        border-radius: 3px;
+        transform: translate(60%, -15%);
+        transform-origin: center right;
+        box-shadow: -2px 0px 0px #95c6f2 inset;
+        animation: shake-left 3s linear infinite;
       }
       
+      .candle2__eyes-one {
+        position: absolute;
+        left: 30%;
+        top: 50%;
+        width: 5px;
+        height: 5px;
+        display: inline-block;
+        border: 0px solid #673C63;
+        border-radius: 100%;
+        background: #673C63;
+        transform: translate(-80%, 0%);
+        animation: changeto-lower 3s linear infinite;
+      }
+
       @keyframes blink-eyes {
         0%,35% {
           opacity: 1;
@@ -403,6 +421,7 @@ body {
           left: 30%;
         }
       }
+
       @keyframes change-background {
         0%,59%,98%,100% {
           background: #FFF;
@@ -430,11 +449,11 @@ body {
       @keyframes change-sun {
         0%,59%,98%,100% {
             top: 0;
-            z-index: -30;
+            left: 0;
         }
         61%,97% {
-            z-index: -40;
-            top: 9em;
+            top: 6em;
+            left: -100em;
         }
       }
       @keyframes move-left {
@@ -575,31 +594,31 @@ body {
           transform: translate(-25%, -50%) scale(0, 0);
           border: 2px solid rgba(255, 255, 255, 0);
         }
-        90%,20%,50% {
+        20%,50% {
           transform: translate(-25%, -50%) scale(1, 1);
         }
-        95%,96%,26%,27%,56%,57% {
+        26%,27%,56%,57% {
           transform: translate(-25%, -50%) scale(2, 2);
           border: 2px solid rgba(255, 255, 255, 0.5);
         }
-        0%,28%,58%,100% {
+        5%,28%,58% {
           transform: translate(-25%, -50%) scale(2.5, 2.5);
           border: 2px solid rgba(255, 255, 255, 0.2);
         }
       }
       @keyframes dance-fire {
-        59%,89% {
+        59%,100% {
           left: 38%;
           width: 0px;
           height: 0px;
         }
-        90%,0%,7%,15%,23%,31%,39%,47%,55% {
+        0%,7%,15%,23%,31%,39%,47%,55% {
           left: 38.8%;
           width: 16px;
           height: 20px;
           background: #FFC107;
         }
-        94%,3%,11%,19%,27%,35%,43%,51%,58% {
+        3%,11%,19%,27%,35%,43%,51%,58% {
           left: 39.2%;
           width: 16px;
           height: 20px;
@@ -655,19 +674,19 @@ body {
         }
       }
 
-/* 
-.wrapper {
+.wrapper1 {
     height: 80vh;
-    width: 60vw;
+    width: 68vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2.5vh;
     overflow: hidden;
-    background: rgb(44 41 90);
-    box-shadow: rgb(44 41 90) 0rem 0rem 0rem 0.4rem;
+    background: linear-gradient(to bottom, #416663 0%, #0c0207 90%);
+    box-shadow: linear-gradient(to bottom, #416663 0%, #0c0207 90%);
     border-radius: 2rem;
 }
+/* 
 
 input {
     display: none;
@@ -716,7 +735,6 @@ img {
     color: #50e30d;
 }
 
-
 .control {
     display: flex;
     justify-content: space-between;
@@ -746,8 +764,6 @@ img {
     background: #1773a0;
 }
 
-
-
 #r1:checked ~ .elements > .control > label:nth-of-type(1) .button,
 #r2:checked ~ .elements > .control > label:nth-of-type(2) .button,
 #r3:checked ~ .elements > .control > label:nth-of-type(3) .button,
@@ -775,9 +791,6 @@ img {
     transition: all 0.5s linear;
 }
 
-
-
-
 #r1:checked ~ .memsSlider > .slide {
     transform: translate(0);
     transition: all 0.8s linear;
@@ -797,8 +810,6 @@ img {
     transform: translate(-300%);
     transition: all 0.8s linear ;
 }
-
-
 
 @media (max-width: 1070px) {
 
@@ -835,3 +846,9 @@ img {
         height: 8rem;
     }
 } */
+@media (max-width: 1000px) {
+  .candles {
+    top: -20%;
+    transform: scale(1.1, 1.1);
+  }
+}
