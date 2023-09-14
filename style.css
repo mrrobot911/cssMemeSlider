@@ -861,4 +861,38 @@ img {
     transform: scale(1.1, 1.1);
   }
 }
+@media (max-width: 900px) {
+  #gato{
+    margin-left: -6em;
+  }
+  .wrapper-candle {
+    right: -4em;
+    }
+}
+@media (max-width: 700px) {
+  #gato{
+    margin-left: -9em;
+  }
+  .wrapper-candle {
+    right: -6em;
+    }
+}
+@media (max-width: 580px) {
+  #gato{
+    margin-left: -13em;
+  }
+  .wrapper-candle {
+    right: -7em;
+    }
+  .perhament-paragraf {
+    display: none;
+  }
+  .wrapper-paragraf{
+    transform: translate(150%, -30%);
+  }
+  .label-container{
+    right: 45%;
+    bottom: -12rem;
+  }
+}
             /* footer */
