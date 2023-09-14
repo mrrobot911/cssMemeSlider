@@ -16,7 +16,8 @@ body {
     padding: 0;
     font: var(--fontSize)/200% 'Bilbo Swash Caps', cursive;
     /* animation: change-background 3s infinite linear; */
-    background-color: #70a2a0;
+    background-image: url(/images/board.jpeg);
+    overflow-x: hidden;
 }
 #marco{
     height: 350px;
@@ -136,6 +137,7 @@ body {
       position: absolute;
       right: 1em;
       top: 1em;
+      z-index: 15;
       }
       .floor {
         position: absolute;
@@ -173,6 +175,7 @@ body {
         text-shadow: 1px 1px 1px #000;
         color: #7F3300;
         transform: scale(1.5, 1.5);
+        z-index: 15;
       }
       .box span{
         font: 1.7em/1em Morris;
@@ -327,7 +330,7 @@ body {
             
       .candle2 {
         position: absolute;
-        /* left: 5%; */
+        left: 20%;
         top: 55%;
         width: 42px;
         height: 60px;
@@ -506,7 +509,7 @@ body {
           transform: translate(60%, -15%);
         }
         65% {
-          left: 21%;
+          left: 10%;
           transform: translate(60%, -15%);
         }
         67% {
@@ -674,181 +677,188 @@ body {
         }
       }
 
-.wrapper1 {
-    height: 80vh;
-    width: 68vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2.5vh;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #416663 0%, #0c0207 90%);
-    box-shadow: linear-gradient(to bottom, #416663 0%, #0c0207 90%);
-    border-radius: 2rem;
-}
-/* 
-
 input {
-    display: none;
+  display: none;
+}
+.label-container{
+  position: absolute;
+  bottom: -17rem;
+  right: 25%;
+  width: 25%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  z-index: 15;
+}
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.memsSlider {
-    width: inherit;
-    height: 60vh;
-    display: flex;
-    background: #000;
+.wax1 {
+  display: block;
+  width: 2.2em;
+  height: 2em;
+  border-radius: 60% 45% 40% 20%;
+  background: radial-gradient(red, rgb(131, 18, 18));
 }
-
-.slide {
-    width: inherit;
-    height: inherit;
+.about__radio-label span {
+  transition: all 1s ease-in-out;
 }
-
+.about__radio-label span:hover {
+  background: radial-gradient(rgb(235, 220, 220), rgb(144, 141, 141));
+  transform: scale(1.1, 1.1);
+}
+label:active > .wax1 {
+  transform: scale(1.3, 1.3);
+}
 img {
-    width: inherit;
-    height: inherit;
-    border-radius: 5%;
+  width: inherit;
+  height: inherit;
+  border-radius: 5%;
+}
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrapper-slide {
+  height: 90vh;
+  width: 68vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5vh;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+.perhament-slide{
+  position: absolute;
+  top:35rem;
+  height: 65vh;
+  width: 48vw;
+  filter: url(#wavy2);
+  box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+  background: #fffef0;
+  transform: scale(1.5, 1.5);
+}
+.container-slide {
+  margin-top: 5em;
+  width: inherit;
+  height: 60vh;
+  display: flex;
+  gap: 30%;
+  padding-left: 15%;
+}
+.slide {
+  width: 50vw;
+  height: 70vh;
+}
+.perhament-paragraf {
+  position: absolute;
+  width: calc(100% / 4);
+  height: 25vh;
+  filter: url(#wavy2);
+  box-shadow: 2px 3px 20px black, 0 0 125px #8f5922 inset;
+  background: #fffef0;
+  transform: scale(1.5, 1.5);
+}
+.wrapper-paragraf {
+  width: calc(100% / 4);
+  height: 12vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  align-self: flex-start;
+}
+.container-paragraf {
+  width: calc(100% * 5);
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10%;
+  gap: 3%;
+}
+.container-paragraf p{
+  font-size: larger;
+  color: #7F3300;
+  width: 30vw;
 }
 
-.elements {
-    width: inherit;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgb(77 86 77);
-    border-radius: 0.5rem;
+#radio1:checked~ .wrapper-paragraf .container-paragraf{
+  transform: translateX(0);
+  transition: all 0.5s linear ;
+}
+#radio1:checked~.wrapper-slide .container-slide {
+  transform: translateX(0);
+  transition: all 0.5s linear ;
+}
+#radio1:checked~.label-container .label1 span {
+  transform: scale(1.3, 1.3);
+  border: 0.2em solid rgb(109, 11, 11);
+}
+#radio2:checked~.wrapper-paragraf .container-paragraf{
+  transform: translateX(calc(-100%/5));
+  transition: all 0.5s linear ;
+}
+#radio2:checked~.wrapper-slide .container-slide {
+  transform: translateX(-100%);
+  transition: all 0.5s linear ;
+}
+#radio2:checked~.label-container .label2 span {
+  transform: scale(1.3, 1.3);
+  border: 0.2em solid rgb(109, 11, 11);
+}
+#radio3:checked~.wrapper-paragraf .container-paragraf{
+  transform: translateX(calc(-200%/5));
+  transition: all 0.5s linear ;
+}
+#radio3:checked~.wrapper-slide .container-slide {
+  transform: translateX(-200%);
+  transition: all 0.5s linear ;
+}
+#radio3:checked~.label-container .label3 span {
+  transform: scale(1.3, 1.3);
+  border: 0.2em solid rgb(109, 11, 11);
+}
+#radio4:checked~.wrapper-paragraf .container-paragraf{
+  transform: translateX(calc(-300%/5));
+  transition: all 0.5s linear ;
+}
+#radio4:checked~.wrapper-slide .container-slide {
+  transform: translateX(-300%);
+  transition: all 0.5s linear ;
+}
+#radio4:checked~.label-container .label4 span {
+  transform: scale(1.3, 1.3);
+  border: 0.2em solid rgb(109, 11, 11);
+}
+#radio5:checked~.wrapper-paragraf .container-paragraf{
+  transform: translateX(calc(-400%/5));
+  transition: all 0.5s linear ;
+}
+#radio5:checked~.wrapper-slide .container-slide {
+  transform: translateX(-400%);
+  transition: all 0.5s linear ;
+}
+#radio5:checked~.label-container .label5 span {
+  transform: scale(1.3, 1.3);
+  border: 0.2em solid rgb(109, 11, 11);
 }
 
-.string {
-    display: flex;
-    display: inline-block;
-    height: 1.9rem;
-    width: auto;
-    overflow: hidden;
-    border: solid 0.15rem #881e1c;
-    background: #000;
-    padding: 0 0.5rem 0 0;
-}
-
-.nameMems {
-    font-size: 1.2rem;
-    color: #50e30d;
-}
-
-.control {
-    display: flex;
-    justify-content: space-between;
-    width: 7rem;
-    padding: 0.3rem;
-}
-
- .btn {
-    padding: 1rem 0.2rem;
-    cursor: pointer;
-} 
-
-.button {
-    width: 1rem;
-    height: 1rem;
-    border: solid 0.15rem rgb(130 30 30);
-    border-radius: 50%;
-    padding: 0;
-    box-shadow: 0rem 0.11rem 0rem 0.1rem #000;
-}
-
-.btn:hover .button {
-    background: #48fa02;
-}
-
-.btn:active .button {
-    background: #1773a0;
-}
-
-#r1:checked ~ .elements > .control > label:nth-of-type(1) .button,
-#r2:checked ~ .elements > .control > label:nth-of-type(2) .button,
-#r3:checked ~ .elements > .control > label:nth-of-type(3) .button,
-#r4:checked ~ .elements > .control > label:nth-of-type(4) .button {
-    background: rgb(255, 0, 0);;
-}
-
-#r1:checked ~ .elements > .string .nameMems {
-    transform: translate(0, 0);
-    transition: all 0.5s linear ;
-}
-
-#r2:checked ~ .elements > .string .nameMems {
-    transform: translate(0, -100%);
-    transition: all 0.5s linear ;
-}
-
-#r3:checked ~ .elements > .string .nameMems {
-    transform: translate(0, -200%);
-    transition: all 0.5s linear ;
-}
-
-#r4:checked ~ .elements > .string .nameMems {
-    transform: translate(0, -300%);
-    transition: all 0.5s linear;
-}
-
-#r1:checked ~ .memsSlider > .slide {
-    transform: translate(0);
-    transition: all 0.8s linear;
-}
-
-#r2:checked ~ .memsSlider > .slide {
-    transform: translate(-100%);
-    transition: all 0.8s linear;
-}
-
-#r3:checked ~ .memsSlider > .slide {
-    transform: translate(-200%);
-    transition: all 0.8s linear;
-}
-
-#r4:checked ~ .memsSlider> .slide {
-    transform: translate(-300%);
-    transition: all 0.8s linear ;
-}
-
-@media (max-width: 1070px) {
-
-    .wrapper {
-        width: 80vw;
-    }
-
-    .memsSlider {
-        height: 45vh;
-    }
-
-    .btn {
-        padding: 0.5rem 0.2rem;
-    }
-
-    .elements {
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 2.5vh;
-        height: inherit;
-        justify-content: start;
-    }
-    .string {
-        align-self: flex-start;
-       height: 20vh;
-       width: 40vw;
-       
-    }
-
-    .nameMems {
-        font-size: 1.2rem;
-        line-height: 2rem;
-        word-spacing: 0.1rem;
-        height: 8rem;
-    }
-} */
 @media (max-width: 1000px) {
   .candles {
     top: -20%;
     transform: scale(1.1, 1.1);
   }
 }
+            /* footer */
