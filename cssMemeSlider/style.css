@@ -16,7 +16,7 @@ body {
     padding: 0;
     font: var(--fontSize)/200% 'Bilbo Swash Caps', cursive;
     /* animation: change-background 3s infinite linear; */
-    background-image: url(/images/board.jpeg);
+    background-image: url(./images/board.jpeg);
     overflow-x: hidden;
 }
 #marco{
