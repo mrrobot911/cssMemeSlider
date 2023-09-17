@@ -875,7 +875,7 @@ img {
     height: 50vh;
   }
   .label-container{
-    bottom: 1rem;
+    bottom: -6rem;
   }
   .perhament-slide {
     height: 50vh;
@@ -902,8 +902,8 @@ img {
       transform: translate(150%, -200%);
     }
     .label-container{
-      right: 45%;
-      bottom: 17rem;
+      right: 43%;
+      bottom: 6rem;
     }
     .slide {
       height: 30vh;
